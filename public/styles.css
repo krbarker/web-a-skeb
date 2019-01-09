@@ -25,6 +25,7 @@
 html,
 body {
   min-width: 280px;
+  min-height: 100vh;
   font-family: sans-serif;
   color: #333333;
   background: #941f1f;
