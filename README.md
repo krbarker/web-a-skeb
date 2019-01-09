@@ -22,7 +22,7 @@ Create your own single line of pure art at https://web-a-skeb.firebaseapp.com
 
 1. From the project root directory:
 ```sh
-git web-a-skeb
+cd web-a-skeb/
 ```
 2. Install the dependencies
 ```sh
