@@ -198,22 +198,19 @@ export class SkebCase extends HTMLElement {
     switch (this._detailButton.value) {
       case 'fast':
         this._screen.classList.add('fast');
-        this._screen.classList.remove('fanciest');
-        this._screen.classList.remove('fancy');
+        this._screen.classList.remove('fanciest', 'fancy');
         this._detailButton.textContent = '✨ Fancy';
         this._detailButton.value = 'fancy';
         break;
       case 'fancy':
         this._screen.classList.add('fancy');
-        this._screen.classList.remove('fanciest');
-        this._screen.classList.remove('fast');
+        this._screen.classList.remove('fanciest', 'fast');
         this._detailButton.textContent = '🌈 Fanciest';
         this._detailButton.value = 'fanciest';
         break;
       case 'fanciest':
         this._screen.classList.add('fanciest');
-        this._screen.classList.remove('fancy');
-        this._screen.classList.remove('fast');
+        this._screen.classList.remove('fancy', 'fast');
         this._detailButton.textContent = '🚀 Fast';
         this._detailButton.value = 'fast';
         break;
