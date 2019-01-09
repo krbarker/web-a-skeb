@@ -1,0 +1,111 @@
+<!--
+ Copyright 2018 Google LLC
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web A Skeb</title>
+<meta name="Description" content="The Magic Web A Skeb Screen" />
+<link rel="canonical" href="https://web-a-skeb.firebaseapp.com" />
+<link rel="manifest" href="/manifest.json" />
+<link rel="stylesheet" href="/styles.css" />
+<meta name="theme-color" content="#991111" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png">
+<link rel="mask-icon" href="/img/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="msapplication-config" content="/img/icons/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#991111">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@rowan_m" />
+<meta name="twitter:title" content="The Magic Web A Skeb Screen" />
+<meta name="twitter:description" content="Create your own single line of pure art." />
+<meta name="twitter:image" content="https://web-a-skeb.firebaseapp.com/img/web-a-skeb-hello-twitter.jpg" />
+<meta name="twitter:image:width" content="949" />
+<meta name="twitter:image:height" content="1000" />
+<meta name="twitter:image:alt" content="Web A Skeb screen showing a poorly drawn representation of the word 'hello'" />
+
+<meta property="og:url" content="https://web-a-skeb.firebaseapp.com" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="The Magic Web A Skeb Screen" />
+<meta property="og:description" content="Create your own single line of pure art." />
+<meta property="og:image" content="https://web-a-skeb.firebaseapp.com/img/web-a-skeb-hello-facebook.jpg" />
+<meta property="og:image:width" content="1897" />
+<meta property="og:image:height" content="1000" />
+
+<skeb-case class="casing">
+  <h1>
+    <span class="title-globe">🌐️</span>
+    <span class="title-desc">Magic</span>
+    <span class="title-name">Web A Skeb</span>
+    <span class="title-desc">Screen</span>
+  </h1>
+  <div class="screen fast">
+    <svg class="active-sketch" preserveAspectRatio="none" x="0" y="0" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+      <path class="sketch-path" d="M8 8 M12 12 M10 10 "></path>
+      <line class="sketch-stylus" x1="10" x2="10" y1="10" y2="10" />
+      <defs>
+        <filter id="pencil-effect">
+          <feTurbulence baseFrequency="1" />
+          <feDisplacementMap scale="2" xChannelSelector="R" in="SourceGraphic" />
+        </filter>
+        <filter id="drop-shadow">
+          <feDropShadow dx="1" dy="1" stdDeviation="0.4" flood-color="#000000" flood-opacity="0.4" />
+        </filter>
+        <linearGradient id="rainbow-effect" x1="0%" y1="0%" x2="100%" y2="100%" spreadMethod="reflect">
+          <stop offset="0%" stop-color="red">
+            <animate attributeName="stop-color" values="red;orange;yellow;green;blue;indigo;violet;red" dur="4s"
+              repeatCount="indefinite" />
+          </stop>
+          <stop offset="17%" stop-color="orange">
+            <animate attributeName="stop-color" values="orange;yellow;green;blue;indigo;violet;red;orange" dur="4s"
+              repeatCount="indefinite" />
+          </stop>
+          <stop offset="34%" stop-color="yellow">
+            <animate attributeName="stop-color" values="yellow;green;blue;indigo;violet;red;orange;yellow" dur="4s"
+              repeatCount="indefinite" />
+          </stop>
+          <stop offset="51%" stop-color="green">
+            <animate attributeName="stop-color" values="green;blue;indigo;violet;red;orange;yellow;green" dur="4s"
+              repeatCount="indefinite" />
+          </stop>
+          <stop offset="68%" stop-color="blue">
+            <animate attributeName="stop-color" values="blue;indigo;violet;red;orange;yellow;green;blue" dur="4s"
+              repeatCount="indefinite" />
+          </stop>
+          <stop offset="85%" stop-color="indigo">
+            <animate attributeName="stop-color" values="indigo;violet;red;orange;yellow;green;blue;indigo" dur="4s"
+              repeatCount="indefinite" />
+          </stop>
+          <stop offset="100%" stop-color="violet">
+            <animate attributeName="stop-color" values="violet;red;orange;yellow;green;blue;indigo;violet" dur="4s"
+              repeatCount="indefinite" />
+          </stop>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+  <touch-knob value="10" class="horz-knob knob">H<br />⇔</touch-knob>
+  <touch-knob value="10" class="vert-knob knob">V<br />⇕</touch-knob>
+  <div class="controls">
+    <button class="button-shake">👋 Shake</button>
+    <toggle-fullscreen><button class="button-fullscreen">⤴️ Fullscreen</button></toggle-fullscreen>
+    <button class="button-detail" value="fancy">✨ Fancy</button>
+  </div>
+</skeb-case>
+<script src="/bundle.js" async defer></script>

@@ -1,0 +1,212 @@
+/**
+ * Copyright 2018 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@font-face {
+  font-family: 'montezregular';
+  src: url('/third_party/Montez-Regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+
+html,
+body {
+  min-width: 280px;
+  font-family: sans-serif;
+  color: #333333;
+  background: #941f1f;
+  margin: 0;
+  padding: 0;
+  /* overflow: hidden; */
+  overscroll-behavior: none;
+  user-select: none;
+}
+
+.casing {
+  position: fixed;
+  top: 2px;
+  bottom: 6px;
+  left: 6px;
+  right: 6px;
+  background: #ff0000;
+  border: 2px solid #991111;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    'title       title    title'
+    'screen      screen   screen'
+    'horz-scroll controls vert-scroll';
+}
+
+@media (orientation: landscape) {
+  .casing {
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto 1fr auto auto;
+  grid-template-areas:
+    'title       title    title      '
+    '.           screen   .          '
+    'horz-scroll screen   vert-scroll'
+    'horz-scroll controls vert-scroll';
+  }
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  grid-area: title;
+  color: #eee8aa;
+  font-size: 8vw;
+  text-align: center;
+  text-shadow: -1.2px -1.2px 0.8px #daa520, 1.5px 1.5px 0.8px #660000;
+}
+
+@media screen and (min-width: 450px) {
+ h1 {
+   font-size: 36px;
+ }
+}
+
+.screen {
+  position: relative;
+  border-radius: 10px;
+  border: 2px solid #808080;
+  background: #c0c0c0;
+  grid-area: screen;
+}
+
+@media (orientation: portrait) {
+  .screen {
+    margin: 0 10px 10px 10px;
+  }
+}
+
+.horz-knob {
+  grid-area: horz-scroll;
+  margin: 4px;
+}
+
+.vert-knob {
+  grid-area: vert-scroll;
+  margin: 4px;
+}
+
+.controls {
+  grid-area: controls;
+  margin: 4px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+button {
+  background: #e80000;
+  color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #eee8aa;
+  outline: 0;
+  padding: 5px 6px 5px 6px;
+  margin: 5px;
+  transition: transform 0.1s ease;
+}
+
+button:hover {
+  background: #b00000;
+}
+
+button:focus {
+  transform: scale(1.05);
+  background: #d00000;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.title-globe {
+  font-style: normal;
+  font-size: 90%;
+}
+
+.title-desc {
+  font-family: sans-serif;
+  font-style: italic;
+  font-size: 80%;
+}
+
+.title-name {
+  font-weight: bold;
+  font-family: 'montezregular', cursive;
+}
+
+.active-sketch,
+.erased-sketch {
+  position: absolute;
+  top: 0.5%;
+  left: 0.5%;
+  width: 99%;
+  height: 99%;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sketch-stylus {
+  stroke: #d0d0d0;
+  vector-effect: non-scaling-stroke;
+}
+
+.sketch-path {
+  stroke: #555555;
+  vector-effect: non-scaling-stroke;
+  fill: none;
+}
+
+.fancy>.active-sketch,
+.fancy>.erased-sketch {
+  filter: url(#pencil-effect);
+}
+
+.fancy>.active-sketch>.sketch-path,
+.fancy>.erased-sketch>.sketch-path {
+  filter: url(#drop-shadow);
+}
+
+.fanciest>.active-sketch,
+.fanciest>.erased-sketch {
+  filter: url(#pencil-effect);
+}
+
+.fanciest>.active-sketch>.sketch-path,
+.fanciest>.erased-sketch>.sketch-path {
+  stroke: url(#rainbow-effect);
+  filter: url(#drop-shadow);
+}
+
+touch-knob {
+  width: 75px;
+  height: 75px;
+  border: 6px dotted #d3d3d3;
+  background: #ffffff;
+  border-radius: 50%;
+  text-align: center;
+  user-select: none;
+  touch-action: none;
+  will-change: transform;
+  margin: 0;
+  overflow: hidden;
+  contain: strict;
+}
